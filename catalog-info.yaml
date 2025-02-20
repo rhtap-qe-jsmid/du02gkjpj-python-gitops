@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: du02gkjpj-python-gitops
+  description: This is GitOps manifest for du02gkjpj-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=du02gkjpj-python
+    backstage.io/kubernetes-id: du02gkjpj-python 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: du02gkjpj-python-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:du02gkjpj-python
